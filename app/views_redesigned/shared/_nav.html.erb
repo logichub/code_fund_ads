@@ -32,9 +32,9 @@
         <!-- .nav -->
         <ul class="header-nav nav">
           <%= active_link_to "Home", root_path, active: :exact, class: "nav-link", wrap_tag: :li, wrap_class: "nav-item" %>
-          <%= active_link_to "Advertisers", advertisers_path, class: "nav-link", wrap_tag: :li, wrap_class: "nav-item" %>
-          <%= active_link_to "Publishers", publishers_path, class: "nav-link", wrap_tag: :li, wrap_class: "nav-item" %>
-          <%= active_link_to "Blog", buttercms_blog_path, class: "nav-link", wrap_tag: :li, wrap_class: "nav-item" %>
+          <%= active_link_to "Advertisers", "/advertisers", class: "nav-link", wrap_tag: :li, wrap_class: "nav-item" %>
+          <%= active_link_to "Publishers", "/publishers", class: "nav-link", wrap_tag: :li, wrap_class: "nav-item" %>
+          <%= active_link_to "Blog", "/blog", class: "nav-link", wrap_tag: :li, wrap_class: "nav-item" %>
 
           <% if current_user %>
             <% if authorized_user.can_admin_system? %>

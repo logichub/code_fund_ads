@@ -696,7 +696,16 @@ CREATE TABLE public.organizations (
     balance_cents integer DEFAULT 0 NOT NULL,
     balance_currency character varying DEFAULT 'USD'::character varying NOT NULL,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    description text,
+    address_1 character varying,
+    address_2 character varying,
+    address_3 character varying,
+    city character varying,
+    county_province character varying,
+    zip_or_postcode character varying,
+    country character varying,
+    display_in_marketing_pages boolean DEFAULT false
 );
 
 
@@ -2561,6 +2570,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20191010203902'),
 ('20191010214024'),
 ('20191014171135'),
-('20191014205953');
+('20191014205953'),
+('20191025203538');
 
 

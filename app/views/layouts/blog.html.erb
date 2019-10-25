@@ -9,32 +9,37 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="/landkit/fonts/Feather/feather.css">
+    <link rel="stylesheet" href="/landkit/libs/flickity/dist/flickity.min.css">
+    <link rel="stylesheet" href="/landkit/libs/flickity-fade/flickity-fade.css">
+    <link rel="stylesheet" href="/landkit/libs/aos/dist/aos.css">
+    <link rel="stylesheet" href="/landkit/libs/jarallax/dist/jarallax.css">
+    <link rel="stylesheet" href="/landkit/libs/highlightjs/styles/vs2015.css">
+    <link rel="stylesheet" href="/landkit/libs/@fancyapps/fancybox/dist/jquery.fancybox.min.css">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="/landkit/css/theme.min.css">
+
+    <style>
+
+    </style>
+
     <link rel="alternate" type="application/atom+xml" title="CodeFund Blog - Atom" href="<%= buttercms_blog_atom_path %>">
     <link rel="alternate" type="application/rss+xml" title="CodeFund Blog - RSS" href="<%= buttercms_blog_rss_path %>">
 
-    <!-- CDN Stylesheets -->
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600">
-    <link rel="stylesheet" href="/css/all.min.css">
-
-    <!-- Compressed Stylesheets -->
-    <%= stylesheet_pack_tag 'code_fund', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <!-- Compressed JavaScripts -->
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'code_fund', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'code_fund_redesign', 'data-turbolinks-track': 'reload' %>
   </head>
-  <%= tag.body data: {
-      filestack_key: ENV["FILESTACK_API_KEY"],
-      referral_code: session[:referral_code] } do %>
-    <%= render "/@shared/skippy" %>
-    <%= render "/@shared/header" %>
-
-    <%= yield :page_heading %>
+  <body class="<%= @body_class %>">
+    <%= render "/shared/landkit/modals" %>
+    <%= render "/shared/landkit/navbar" %>
     <%= yield %>
-    <%= render "/@shared/footer" %>
-    <%= render "/@shared/secondary" if current_user %>
+    <%= render "/shared/landkit/footer" %>
+    <%= render "/shared/landkit/scripts" %>
 
     <%= headway_tag %>
     <%= ga_tag_manager_footer %>
-  <% end %>
+  </body>
 </html>

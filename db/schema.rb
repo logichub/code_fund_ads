@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_14_205953) do
+ActiveRecord::Schema.define(version: 2019_10_25_203538) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
@@ -370,6 +370,15 @@ ActiveRecord::Schema.define(version: 2019_10_14_205953) do
     t.string "balance_currency", default: "USD", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
+    t.string "address_1"
+    t.string "address_2"
+    t.string "address_3"
+    t.string "city"
+    t.string "county_province"
+    t.string "zip_or_postcode"
+    t.string "country"
+    t.boolean "display_in_marketing_pages", default: false
   end
 
   create_table "properties", force: :cascade do |t|

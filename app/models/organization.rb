@@ -18,6 +18,7 @@ class Organization < ApplicationRecord
   # includes ..................................................................
   include Organizations::Developable
   include Eventable
+  include Imageable
 
   # relationships .............................................................
   has_many :campaigns
@@ -43,6 +44,7 @@ class Organization < ApplicationRecord
   scope :with_positive_balance, -> { where(Organization.arel_table[:balance_cents].gt(0)) }
   scope :with_negative_balance, -> { where(Organization.arel_table[:balance_cents].lt(0)) }
   scope :with_zero_balance, -> { where(balance_cents: 0) }
+  scope :for_marketing, -> { where(display_in_marketing_pages: true) }
   scope :search_name, ->(value) { value.blank? ? all : search_column(:name, value) }
   scope :search_balance_direction, ->(value) {
     case value
@@ -60,6 +62,9 @@ class Organization < ApplicationRecord
   has_paper_trail on: %i[update destroy], only: %i[
     name
   ]
+  has_one_attached :color_logo
+  has_one_attached :white_logo
+  has_one_attached :square_logo
 
   # class methods .............................................................
   class << self

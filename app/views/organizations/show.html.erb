@@ -8,9 +8,26 @@
 
       <ul class="list-unstyled mb-0">
         <%= details_li("Name") { @organization.name } %>
+        <%= details_li("Address") { @organization.address_1 } %>
         <%= details_li("Credits") { @organization.total_credits.format } %>
         <%= details_li("Debits") { @organization.total_debits.format } %>
         <%= details_li("Balance") { link_to @organization.balance.format, organization_transactions_path(@organization) } %>
+        <%= details_li("Logos") do %>
+          <table class="table">
+            <tr>
+              <td>Color</td>
+              <td><%= image_tag @organization.color_logo, style: "width: 260px; height: 60px;" %></td>
+            </tr>
+            <tr>
+              <td>White</td>
+              <td style="background-color: #000"><%= image_tag @organization.white_logo, style: "width: 260px; height: 60px;" %></td>
+            </tr>
+            <tr>
+              <td>Square</td>
+              <td><%= image_tag @organization.square_logo, style: "width: 60px; height: 60px;" %></td>
+            </tr>
+          </table>
+        <% end %>
       </ul>
     </div>
   </div>

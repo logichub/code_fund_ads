@@ -3,8 +3,29 @@
   <%= render "/@shared/forms/error_messages", object: organization %>
 
   <div class="row">
-    <%= tag.div f.input(:name, as: :string, required: true, input_html: { class: "form-control" },
-      data: { msg: "Please enter a valid name", error_class: "u-has-error", success_class: "u-has-success" }), class: "col-12 mb-3" %>
+    <%= tag.div f.input(:name, as: :string, required: true, input_html: { class: "form-control" }), class: "col-12 mb-3" %>
+    <%= tag.div f.input(:address_1, as: :string, input_html: { class: "form-control" }), class: "col-12 mb-3" %>
+    <%= tag.div f.input(:address_2, as: :string, input_html: { class: "form-control" }), class: "col-12 mb-3" %>
+    <%= tag.div f.input(:address_3, as: :string, input_html: { class: "form-control" }), class: "col-12 mb-3" %>
+    <%= tag.div f.input(:city, as: :string, input_html: { class: "form-control" }), class: "col-12 mb-3" %>
+    <%= tag.div f.input(:county_province, as: :string, input_html: { class: "form-control" }), class: "col-12 mb-3" %>
+    <%= tag.div f.input(:zip_or_postcode, as: :string, input_html: { class: "form-control" }), class: "col-12 mb-3" %>
+    <%= tag.div f.input(:country, as: :string, input_html: { class: "form-control" }), class: "col-12 mb-3" %>
+    <%= tag.div f.input(:color_logo, label: "Color Logo (260x60 SVG)", as: :file, input_html: { class: "form-control" }), class: "col-12 mb-3" %>
+    <%= tag.div f.input(:white_logo, label: "White Logo (260x60 SVG)", as: :file, input_html: { class: "form-control" }), class: "col-12 mb-3" %>
+    <%= tag.div f.input(:square_logo, label: "Square Logo (260x260 SVG)", as: :file, input_html: { class: "form-control" }), class: "col-12 mb-3" %>
+
+    <div class="col-12 mb-3">
+      <div class="media align-items-center mb-3">
+        <label class="checkbox-switch mb-0 mr-3">
+          <%= f.check_box :display_in_marketing_pages, class: "checkbox-switch__input" %>
+          <span class="checkbox-switch__slider"></span>
+        </label>
+        <label class="media-body text-muted mb-0">
+          <span class="d-block text-dark">Include this organization in CodeFund's marketing material and pages?</span>
+        </label>
+      </div>
+    </div>
 
     <%= render "@shared/forms/button_panel" do %>
       <%= f.submit "Save Organization", class: "btn btn-sm btn-primary transition-3d-hover mr-1" %>

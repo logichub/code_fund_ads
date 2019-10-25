@@ -1,6 +1,6 @@
 <!-- NAVBAR
 ================================================== -->
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light <%= @navbar_class %>">
   <div class="container">
     <!-- Brand -->
     <%= link_to root_path, class: "navbar-brand" do %>
@@ -22,9 +22,10 @@
 
       <!-- Navigation -->
       <ul class="navbar-nav ml-auto">
-        <% menu_items.each do |menu_item| %>
-          <%= active_link_to menu_item.label, menu_item.url, class: "nav-link", wrap_tag: :li, wrap_class: "nav-item", active: :exact %>
-        <% end %>
+        <%= active_link_to "Home", "/", class: "nav-link", wrap_tag: :li, wrap_class: "nav-item", active: :exact %>
+        <%= active_link_to "Advertisers", "/advertisers", class: "nav-link", wrap_tag: :li, wrap_class: "nav-item" %>
+        <%= active_link_to "Publishers", "/publishers", class: "nav-link", wrap_tag: :li, wrap_class: "nav-item" %>
+        <%= active_link_to "Blog", "/blog", class: "nav-link", wrap_tag: :li, wrap_class: "nav-item" %>
       </ul>
 
       <!-- Button -->

@@ -1,10 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
+    <%= ga_tag_manager_header %>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= action_cable_meta_tag %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
     <!-- Libs CSS -->
     <link rel="stylesheet" href="/landkit/fonts/Feather/feather.css">
@@ -15,23 +19,22 @@
     <link rel="stylesheet" href="/landkit/libs/highlightjs/styles/vs2015.css">
     <link rel="stylesheet" href="/landkit/libs/@fancyapps/fancybox/dist/jquery.fancybox.min.css">
 
-    <!-- Map -->
-    <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
-
-    <!-- Theme CSS -->
     <link rel="stylesheet" href="/landkit/css/theme.min.css">
 
     <!-- Compressed JavaScripts -->
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'code_fund_redesign', 'data-turbolinks-track': 'reload' %>
 
-    <title><%= @butter&.title || "CodeFund" %></title>
+    <title>CodeFund</title>
   </head>
-  <body class="bg-light">
+  <body>
     <%= render "/shared/landkit/modals" %>
-    <%= render "/shared/landkit/navbar", menu_items: @data[:menu_items] %>
+    <%= render "/shared/landkit/navbar" %>
     <%= yield %>
-    <%= butter_render @data[:snippets_footer] %>
+    <%= render "/shared/landkit/footer" %>
     <%= render "/shared/landkit/scripts" %>
+
+    <%= headway_tag %>
+    <%= ga_tag_manager_footer %>
   </body>
 </html>
