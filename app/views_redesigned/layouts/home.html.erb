@@ -25,13 +25,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'code_fund_redesign', 'data-turbolinks-track': 'reload' %>
 
-    <title><%= @butter&.seo_title || "CodeFund" %></title>
+    <title><%= @butter&.title || "CodeFund" %></title>
   </head>
   <body class="bg-light">
     <%= render "/shared/landkit/modals" %>
-    <%= render "/shared/landkit/navbar" %>
+    <%= render "/shared/landkit/navbar", menu_items: @data[:menu_items] %>
     <%= yield %>
-    <%= render "/shared/landkit/footer" %>
+    <%= butter_render @data[:snippets_footer] %>
     <%= render "/shared/landkit/scripts" %>
   </body>
 </html>

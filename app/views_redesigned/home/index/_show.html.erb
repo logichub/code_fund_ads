@@ -1,13 +1,13 @@
-<%= render "/pages/index/hero" %>
-<%= render "/pages/index/testimonials" %>
-<%= render "/pages/@shared/clients_bar" %>
-<%= render "/pages/index/stats",
-  from_date: @report_from_date.to_s("bdy"),
+<%= render "/home/index/hero" %>
+<%= render "/home/index/testimonials" %>
+<%= render "/home/@shared/clients_bar" %>
+<%= render "/home/index/stats",
+  from_date: Date.parse("2019-01-01").to_s("bdy"),
   property_count: Property.active.count,
-  impressions_count: ImpressionStats.count(@report_from_date),
-  click_rate: ImpressionStats.click_rate(@report_from_date)
+  campaign_count: Campaign.active.count,
+  click_rate: ImpressionStats.click_rate(Date.parse("2019-01-01"))
 %>
-<%= render "/pages/@shared/down_curve_left" %>
-<%= render "/pages/index/reporting" %>
-<%= render "/pages/@shared/sign_up_form" %>
-<%= render "/pages/@shared/bottom_curve" %>
+<%= render "/home/@shared/down_curve_left" %>
+<%= render "/home/index/reporting" %>
+<%= render "/home/@shared/sign_up_form" %>
+<%= render "/home/@shared/bottom_curve" %>

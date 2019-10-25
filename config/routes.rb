@@ -21,10 +21,7 @@ Rails.application.routes.draw do
   end
   resources :split_experiments, only: [:update, :destroy]
 
-  root to: "pages#index"
-
-  # Temporary until we replace Pages with Home
-  resources :home, path: "/home", only: [:index, :show]
+  root to: "home#index"
 
   devise_for :users, controllers: {
     sessions: "sessions",
@@ -158,8 +155,6 @@ Rails.application.routes.draw do
   get "/stop_user_impersonation", to: "impersonations#destroy", as: :stop_user_impersonation
 
   resource :newsletter_subscription, only: [:create]
-  resources :advertisers, only: [:index]
-  resources :publishers, only: [:index]
 
   resources :advertisement_previews, param: :campaign_id, only: [:index, :show], path: "ad-previews"
   # NOTE: this is non restful and bad practice (don't do this)
@@ -189,5 +184,5 @@ Rails.application.routes.draw do
   resources :wordpress_snippets, only: [:show]
 
   # IMPORTANT: leave as last route so it doesn't override others
-  get "/*id", to: "pages#show", as: :page, constraints: {id: /(?!rails).*/}
+  get "/*id", to: "home#show", as: :page, constraints: {id: /(?!rails).*/}
 end
