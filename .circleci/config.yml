@@ -59,9 +59,10 @@ jobs:
       - run: |
           sudo apt-get update
           sudo apt-get install -y postgresql-client
-          curl -o- -L https://yarnpkg.com/install.sh | sudo bash
           curl -o- -L https://deb.nodesource.com/setup_13.x | sudo bash
-          sudo apt-get update && sudo apt-get install -y nodejs yarn
+          curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+          echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+          sudo apt-get update && sudo apt-get install nodejs yarn
 
       - run:
           name: update bundler
