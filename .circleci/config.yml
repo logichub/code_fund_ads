@@ -50,11 +50,11 @@ jobs:
             - cf-bundler-{{ checksum "Gemfile.lock" }}
             - cf-bundler-
 
-      - restore_cache:
-          name: restore yarn cache
-          keys:
-            - cf-yarn-{{ checksum "yarn.lock" }}
-            - cf-yarn-
+      # - restore_cache:
+      #     name: restore yarn cache
+      #     keys:
+      #       - cf-yarn-{{ checksum "yarn.lock" }}
+      #       - cf-yarn-
 
       - run: |
           sudo apt-get update
