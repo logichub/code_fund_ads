@@ -56,9 +56,12 @@ jobs:
             - cf-yarn-{{ checksum "yarn.lock" }}
             - cf-yarn-
 
-      - run: sudo apt-get update
-      - run: sudo apt-get install -y postgresql-client
-      - run: curl -o- -L https://yarnpkg.com/install.sh | bash
+      - run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client
+          curl -o- -L https://yarnpkg.com/install.sh | sudo bash
+          curl -o- -L https://deb.nodesource.com/setup_13.x | sudo bash
+          sudo apt-get update && sudo apt-get install -y nodejs yarn
 
       - run:
           name: update bundler
