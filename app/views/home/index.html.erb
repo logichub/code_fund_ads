@@ -65,7 +65,7 @@
             Chipper Nicodemus
           </p>
           <p class="font-size-sm text-muted mb-0">
-            Sr. Mgr of Acquisition, <a href="https://segment.io">Segment</a>
+            Sr. Mgr of Acquisition, <a href="https://segment.com">Segment</a>
           </p>
 
         </blockquote>
@@ -107,28 +107,70 @@
 <section class="py-6 py-md-8 bg-primary-desat">
   <div class="container">
     <div class="flickity-viewport-visible" data-flickity='{"imagesLoaded": true, "initialIndex": 6, "pageDots": false, "prevNextButtons": false, "contain": true}'>
-      <% Organization.for_marketing.each do |organization| %>
-        <div class="col-4 col-md-3 col-lg-2">
-          <div class="img-fluid svg-shim text-white">
-            <%= image_tag organization.logo_white, alt: organization.name, style: "max-height: 30px; max-width: 130px;" %>
-          </div>
+      <div class="col-4 col-md-3 col-lg-2">
+        <div class="img-fluid svg-shim text-white">
+          <%= link_to image_tag("advertisers/logo-w-allinfra.svg", alt: "Allinfra", style: "max-height: 30px; max-width: 130px;"), "https://allinfra.com", target: "_blank" %>
         </div>
-      <% end %>
+      </div>
+      <div class="col-4 col-md-3 col-lg-2">
+        <div class="img-fluid svg-shim text-white">
+          <%= link_to image_tag("advertisers/logo-w-buildkite.svg", alt: "Buildkite", style: "max-height: 30px; max-width: 130px;"), "https://buildkite.com", target: "_blank" %>
+        </div>
+      </div>
+      <div class="col-4 col-md-3 col-lg-2">
+        <div class="img-fluid svg-shim text-white">
+          <%= link_to image_tag("advertisers/logo-w-cloudbees.svg", alt: "CloudBees", style: "max-height: 30px; max-width: 130px;"), "https://cloudbees.com", target: "_blank" %>
+        </div>
+      </div>
+      <div class="col-4 col-md-3 col-lg-2">
+        <div class="img-fluid svg-shim text-white">
+          <%= link_to image_tag("advertisers/logo-w-mongodb.svg", alt: "MongoDB", style: "max-height: 30px; max-width: 130px;"), "https://mongodb.com", target: "_blank" %>
+        </div>
+      </div>
+      <div class="col-4 col-md-3 col-lg-2">
+        <div class="img-fluid svg-shim text-white">
+          <%= link_to image_tag("advertisers/logo-w-segment.svg", alt: "Rollbar", style: "max-height: 30px; max-width: 130px;"), "https://segment.com", target: "_blank" %>
+        </div>
+      </div>
+      <div class="col-4 col-md-3 col-lg-2">
+        <div class="img-fluid svg-shim text-white">
+          <%= link_to image_tag("advertisers/logo-w-rollbar.svg", alt: "Rollbar", style: "max-height: 30px; max-width: 130px;"), "https://rollbar.com", target: "_blank" %>
+        </div>
+      </div>
+      <div class="col-4 col-md-3 col-lg-2">
+        <div class="img-fluid svg-shim text-white">
+          <%= link_to image_tag("advertisers/logo-w-fortmatic.svg", alt: "Fortmatic", style: "max-height: 30px; max-width: 130px;"), "https://fortmatic.io", target: "_blank" %>
+        </div>
+      </div>
+      <div class="col-4 col-md-3 col-lg-2">
+        <div class="img-fluid svg-shim text-white">
+          <%= link_to image_tag("advertisers/logo-w-square.svg", alt: "Square", style: "max-height: 30px; max-width: 130px;"), "https://squareup.com", target: "_blank" %>
+        </div>
+      </div>
+      <div class="col-4 col-md-3 col-lg-2">
+        <div class="img-fluid svg-shim text-white">
+          <%= link_to image_tag("advertisers/logo-w-daily.svg", alt: "Daily", style: "max-height: 30px; max-width: 130px;"), "https://dailynow.com", target: "_blank" %>
+        </div>
+      </div>
+      <div class="col-4 col-md-3 col-lg-2">
+        <div class="img-fluid svg-shim text-white">
+          <%= link_to image_tag("advertisers/logo-w-jetbrains.svg", alt: "Jetbrains", style: "max-width: 300px; position: absolute; top: -30px;"), "https://jetbrains.com", target: "_blank" %>
+        </div>
+      </div>
+      <div class="col-4 col-md-3 col-lg-2">
+        <div class="img-fluid svg-shim text-white">
+          <%= link_to image_tag("advertisers/logo-w-chainstack.svg", alt: "Chainstack", style: "max-height: 30px; max-width: 130px;"), "https://chainstack.com", target: "_blank" %>
+        </div>
+      </div>
     </div>
   </div> <!-- / .container -->
 </section>
 
 <!-- STATS
 ================================================== -->
-<section class="pt-8 pt-md-12 pb-10 pb-md-14 pb-lg-15">
+<section class="pt-8 pt-md-12 pb-10 pb-md-14 pb-lg-15 bg-light">
   <div class="container">
     <div class="row align-items-center justify-content-between">
-      <div class="col-12 col-md-6">
-        <!-- Image -->
-        <div class="img-skewed img-skewed-right mb-10 mb-md-0">
-          <img src="/landkit/img/screenshots/ui/dashkit-layered.png" alt="..." class="img-fluid" data-aos="img-skewed-item-right">
-        </div>
-      </div>
       <div class="col-12 col-md-6 col-lg-5">
         <!-- Heading -->
         <h2>
@@ -137,7 +179,7 @@
         </h2>
         <!-- Text -->
         <p class="font-size-lg text-gray-700 mb-2">
-          CodeFund was founded and is run by a small team of open source maintainers.
+          CodeFund was founded and is run by a <%= link_to "small team", "#" %> of open source maintainers and sustainers.
         </p>
         <p class="font-size-lg text-gray-700 mb-6">
           We are uniquely qualified to help you succeed when advertising to software developers.
@@ -170,6 +212,12 @@
               Avg. Click Rate
             </p>
           </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <!-- Image -->
+        <div class="img-skewed img-skewed-right mb-10 mb-md-0">
+          <img src="/landkit/img/screenshots/ui/dashkit-layered.png" alt="..." class="img-fluid" data-aos="img-skewed-item-right">
         </div>
       </div>
     </div>

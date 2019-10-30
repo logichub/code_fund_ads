@@ -3,8 +3,6 @@
   <head>
     <%= ga_tag_manager_header %>
 
-    <title>CodeFund | Login</title>
-
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,11 +27,14 @@
 
     <title>CodeFund</title>
   </head>
-  <body>
+  <body class="bg-light">
+    <%= render "/shared/landkit/modals" %>
+    <%= render "/shared/landkit/navbar" %>
     <%= yield %>
-
+    <%= render "/shared/landkit/footer" %>
     <%= render "/shared/landkit/scripts" %>
-    <%= toast %>
+
+    <%= headway_tag %>
     <%= ga_tag_manager_footer %>
   </body>
 </html>

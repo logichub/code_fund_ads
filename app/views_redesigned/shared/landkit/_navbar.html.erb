@@ -30,7 +30,7 @@
 
       <!-- Button -->
       <% if current_user %>
-        <%= link_to "Dashboard", "#", class: "navbar-btn btn btn-sm btn-primary lift ml-auto" %>
+        <%= link_to "Dashboard", default_dashboard_path(current_user), class: "navbar-btn btn btn-sm btn-primary lift ml-auto" %>
       <% else %>
         <%= link_to "Login", new_user_session_path, class: "navbar-btn btn btn-sm btn-primary lift ml-auto" %>
       <% end %>

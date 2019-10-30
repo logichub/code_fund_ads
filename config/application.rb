@@ -29,7 +29,7 @@ module CodeFundAds
        Devise::ConfirmationsController,
        Devise::UnlocksController,
        Devise::PasswordsController,].each do |views|
-         views.layout proc { |controller| Rails.env.development? && ENV["REDESIGN"] == "true" ? "application_redesign" : "application" }
+         views.layout "authentication"
        end
     end
   end

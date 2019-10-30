@@ -46,3 +46,4 @@ yarn-debug.log*
 legacy
 lib/tasks/impressions.rake
 /coverage
+.idea
