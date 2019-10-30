@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/ruby:2.6.5-stretch-browsers
+      - image: circleci/ruby:2.6.5-node-browsers
         environment:
           PG_HOST: localhost
           PG_USER: ubuntu
@@ -50,11 +50,11 @@ jobs:
             - cf-bundler-{{ checksum "Gemfile.lock" }}
             - cf-bundler-
 
-      # - restore_cache:
-      #     name: restore yarn cache
-      #     keys:
-      #       - cf-yarn-{{ checksum "yarn.lock" }}
-      #       - cf-yarn-
+      - restore_cache:
+          name: restore yarn cache
+          keys:
+            - cf-yarn-{{ checksum "yarn.lock" }}
+            - cf-yarn-
 
       - run: |
           sudo apt-get update
