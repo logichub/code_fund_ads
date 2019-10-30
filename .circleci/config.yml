@@ -105,4 +105,4 @@ jobs:
 
       - run:
           name: run prettier-standard check
-          command: yarn run prettier-standard --check 'app/**/*.js'
+          command: yarn run --ignore-engines prettier-standard --check 'app/**/*.js'
