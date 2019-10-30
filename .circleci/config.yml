@@ -62,7 +62,7 @@ jobs:
           curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
           echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee -a /etc/apt/sources.list
           sudo apt-get --no-install-recommends install apt-transport-https
-          curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+          curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash
           sudo apt-get update
           sudo apt-get --no-install-recommends install nodejs yarn
           node --version
